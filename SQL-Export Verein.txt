@@ -1,0 +1,86 @@
+﻿-- phpMyAdmin SQL Dump
+-- version 4.6.6deb4
+-- https://www.phpmyadmin.net/
+--
+-- Host: localhost:3306
+-- Erstellungszeit: 11. Jan 2019 um 14:03
+-- Server-Version: 10.1.23-MariaDB-9+deb9u1
+-- PHP-Version: 7.0.30-0+deb9u1
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Datenbank: `Verein`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Tabellenstruktur für Tabelle `Mitglieder`
+--
+
+CREATE TABLE `Mitglieder` (
+  `ID` int(3) NOT NULL,
+  `Eintrittsdatum` date DEFAULT NULL,
+  `Vorname` varchar(20) DEFAULT NULL,
+  `Nachname` varchar(20) DEFAULT NULL,
+  `Anrede` varchar(20) DEFAULT NULL,
+  `IBAN` varchar(20) DEFAULT NULL,
+  `BIC` text,
+  `Strasse` varchar(20) DEFAULT NULL,
+  `Postleitzahl` text,
+  `Ort` varchar(20) DEFAULT NULL,
+  `Jahresbeitrag` decimal(3,0) DEFAULT NULL,
+  `TelefonFestnetz` varchar(15) DEFAULT NULL,
+  `Austrittsdatum` date DEFAULT NULL,
+  `Nichtzahler` varchar(13) DEFAULT NULL,
+  `KontoName` varchar(30) DEFAULT NULL,
+  `Konto_Strasse` varchar(16) DEFAULT NULL,
+  `Konto_Plz` varchar(10) DEFAULT NULL,
+  `Konto_Ort` varchar(20) DEFAULT NULL,
+  `KontoMandatvom` date DEFAULT NULL,
+  `KontoMandatNr` varchar(8) DEFAULT NULL,
+  `KontoErstFolgeabbuchung` varchar(4) DEFAULT NULL,
+  `Ortsteil` varchar(14) DEFAULT NULL,
+  `Email` varchar(25) DEFAULT NULL,
+  `Verwendungszweck` varchar(30) DEFAULT NULL,
+  `KontoLand` varchar(2) DEFAULT NULL,
+  `KontoBank` varchar(26) DEFAULT NULL,
+  `Geschlecht` varchar(1) DEFAULT NULL,
+  `Geburtsdatum` date DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Tabellenstruktur für Tabelle `Stammdaten`
+--
+
+CREATE TABLE `Stammdaten` (
+  `Vereinsname` text NOT NULL,
+  `VereinsIban` text NOT NULL,
+  `VereinsBIC` text NOT NULL,
+  `GlauebigerID` text NOT NULL,
+  `Ausfuehrungsoffset` int(3) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Indizes der exportierten Tabellen
+--
+
+--
+-- Indizes für die Tabelle `Mitglieder`
+--
+ALTER TABLE `Mitglieder`
+  ADD PRIMARY KEY (`ID`);
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
